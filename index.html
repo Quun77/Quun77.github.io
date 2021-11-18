@@ -93,12 +93,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>&emsp; 《异星工厂》是由slpwnd制作发行的一款模拟经营类作品，在游戏中玩家的飞船坠落的在了异星球，在玩家需要利用星球上的资源生存下来并建立一个工厂。<br>&emsp; 收集资源，升级自己的设备，建设基础设施，让生产自动化，并打败你的敌人。</p>
+        <p>《异星工厂》是由slpwnd制作发行的一款模拟经营类作品，在游戏中玩家的飞船坠落的在了异星球，在玩家需要利用星球上的资源生存下来并建立一个工厂。</p>
+<p>收集资源，升级自己的设备，建设基础设施，让生产自动化，并打败你的敌人。</p>
 <h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><p>本次教程适用于WIN环境下。</p>
-<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p>&emsp;请确认您开服的服务器拥有公网IP，并且能正常访问端口，推荐使用低延迟不丢包网络的服务器以获得更佳的游戏体验。<br>&emsp;如果你没有公网IP，可以向网络运营商申请，或者购买云服务器，或者去了解一下内网穿透。</p>
-<h3 id="程序-服务端"><a href="#程序-服务端" class="headerlink" title="程序(服务端)"></a>程序(服务端)</h3><p>官网下载factorio客户端。（linux有专用headless端）</p>
-<p>首先按右上角（log in）登陆你的factorio账号，</p>
-<p>然后按<a target="_blank" rel="noopener" href="https://www.factorio.com/get-download/1.1.46/alpha/win64-manual" title="download">https://www.factorio.com/get-download/1.1.46/alpha/win64-manual</a>进入下载页面，选择你需要的游戏版本，（stable release）是稳定版 （experimental release）是测试版，然后点击（MS Windows (64 bit zip package)）下载游戏的压缩包</p>
+<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p>请确认您开服的服务器拥有公网IP，并且能正常访问端口，推荐使用低延迟不丢包网络的服务器以获得更佳的游戏体验。</p>
+<p>如果你没有公网IP，可以向网络运营商申请，或者购买云服务器，或者去了解一下内网穿透。</p>
+<h3 id="程序-服务端"><a href="#程序-服务端" class="headerlink" title="程序(服务端)"></a>程序(服务端)</h3><p>官网下载factorio客户端。（linux有专用headless端）。</p>
+<p>首先按右上角（log in）登陆你的factorio账号。</p>
+<p>点击<a target="_blank" rel="noopener" href="https://www.factorio.com/download" title="异星工厂下载链接">https://www.factorio.com/download</a>进入下载页面，选择你需要的游戏版本，（stable release）是稳定版 （experimental release）是测试版，然后点击（MS Windows (64 bit zip package)）下载游戏的压缩包。</p>
+<h3 id="硬件要求"><a href="#硬件要求" class="headerlink" title="硬件要求"></a>硬件要求</h3><p>一个后期的地图大概会占用2G左右的内存，6700K单核心的80%，一般的E5也可以开后期比较卡而已。</p>
+<h2 id="搭建教程"><a href="#搭建教程" class="headerlink" title="搭建教程"></a>搭建教程</h2><p>首先将下载的客户端程序解压至指定目录。本次教程目录为（D:\factorio）</p>
+<p>然后创建一个bat文件，文件名go.bat。内容bin\x64\factorio.exe –start-server-load-latest –server-settings server-settings.example.json –port 34198   （红色部分意思是自动寻找最新的存档载入并运行服务端， 蓝色部分是读取名为server-settings.example.json的服务器配置文件，紫色部分是表示这个服务器端口号，34197的话可以不填写 ）</p>
+<p>保存bat文件，然后到data目录中吧server-settings.example.json这个文件复制到根目录中。此时你的文件夹结构应该是这样的。</p>
 
       
     </div>
