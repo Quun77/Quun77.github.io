@@ -103,12 +103,37 @@
 <p>点击<a target="_blank" rel="noopener" href="https://www.factorio.com/download" title="异星工厂下载链接">https://www.factorio.com/download</a>进入下载页面，选择你需要的游戏版本，（stable release）是稳定版 （experimental release）是测试版，然后点击（MS Windows (64 bit zip package)）下载游戏的压缩包。</p>
 <h3 id="硬件要求"><a href="#硬件要求" class="headerlink" title="硬件要求"></a>硬件要求</h3><p>一个后期的地图大概会占用2G左右的内存，6700K单核心的80%，一般的E5也可以开后期比较卡而已。</p>
 <h2 id="搭建教程"><a href="#搭建教程" class="headerlink" title="搭建教程"></a>搭建教程</h2><p>首先将下载的客户端程序解压至指定目录。本次教程目录为（D:\factorio）</p>
-<p>然后创建一个bat文件，文件名go.bat。内容</p>
+<p>然后创建一个bat文件，文件名go.bat 内容:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin\x64\factorio.exe --start-server-load-latest --server-settings server-settings.example.json --port 34198   </span><br></pre></td></tr></table></figure>
 
 <p>（<font color="red">–start-server-load-latest</font>&nbsp; 意思是自动寻找最新的存档载入并运行服务端， 蓝色部分是读取名为server-settings.example.json的服务器配置文件，<font color="red">–port 34198</font>&nbsp; 表示这个服务器端口号，34197的话可以不填写 ）</p>
 <p>保存bat文件，然后到data目录中吧server-settings.example.json这个文件复制到根目录中。此时你的文件夹结构应该是这样的。</p>
 <p><img src="https://s3.bmp.ovh/imgs/2021/11/474df85eaeae1ccb.png" alt="目录文件"></p>
+<p>然后在这个目录中创建一个存档目录（saves）</p>
+<p>存档需要从你的游戏中复制一个过来，放入saves文件夹即可（虽然游戏客户端可以生成地图，但不属于本教程内容，请自行琢磨）</p>
+<p>此时。你双击go.bat 即可成功启动一个服务端。你只要吧你服务器的IP给你朋友即可连接。</p>
+<h2 id="服务器配置文件设置"><a href="#服务器配置文件设置" class="headerlink" title="服务器配置文件设置"></a>服务器配置文件设置</h2><p>如果你已经可以成功运行服务器。但是想要更多的服务器配置。那么请继续看吧。</p>
+<p>注意到前面调用的server-settings.example.json配置文件了吗？请使用notepad++打开。使用系统自带的记事本软件可能导致编码错误。</p>
+<p>如果你有英文基础就可以按照说明配置了。</p>
+<p>以下是全文档手工翻译（不保证准确性，只代表本人理解并描述的功能。）</p>
+<p>请勿复制，因为配置文件无法这样使用。请按照你的文件模板修改。<br>{<br>“name”: “你服务器的名称，会出现在游戏列表中。字符不要太长”,<br>“description”: “描述你的服务器”,<br>“tags”: [“game”, “标签”],</p>
+<p>“_comment_max_players”: “允许的最大玩家数，管理员无效，0表示无限制”,<br>“max_players”: 0,</p>
+<p>“_comment_visibility”: [“public: 公开，游戏会在互联网游戏中出现true表示打开”,<br>“lan: 局域网，表示游戏会在局域网游戏中出现。”],<br>“visibility”:<br>{<br>“public”: true,<br>“lan”: true<br>},</p>
+<p>“_comment_credentials”: “如果你想在互联网游戏中显示，则需要登录factorio账号”,<br>“username”: “”,<br>“password”: “”,</p>
+<p>“_comment_token”: “如果你担心密码泄露，可以填写token身份令牌。在官网登录后点击你的名字，就可以获取”,<br>“token”: “”,</p>
+<p>“_game_password”: “进入服务器的密码，留空为无”,<br>“game_password”: “”,</p>
+<p>“_comment_require_user_verification”: “设置为true时，需要验证客户端是否有factorio账号登录,俗称正版验证”,<br>“require_user_verification”: true,</p>
+<p>“_comment_max_upload_in_kilobytes_per_second” : “最大上传宽带，单位是KB/S，0表示无限制”,<br>“max_upload_in_kilobytes_per_second”: 0,</p>
+<p>“_comment_minimum_latency_in_ticks”: “不明，也许是限制最高ping？”,<br>“minimum_latency_in_ticks”: 0,</p>
+<p>“_comment_ignore_player_limit_for_returning_players”: “即使达到最大人数，以前来玩过的玩家依然可以加入”,<br>“ignore_player_limit_for_returning_players”: false,</p>
+<p>“_comment_allow_commands”: “允许谁运行命令，true全部人, false全部人不允许，admins-only仅管理员”,<br>“allow_commands”: “admins-only”,</p>
+<p>“_comment_autosave_interval”: “自动保存间隔（分钟）”,<br>“autosave_interval”: 10,</p>
+<p>“_comment_autosave_slots”: “自动保存的存档数量。”,<br>“autosave_slots”: 5,</p>
+<p>“_comment_afk_autokick_interval”: “玩家长时间不动踢出游戏，0表示不踢”,<br>“afk_autokick_interval”: 0,</p>
+<p>“_comment_auto_pause”: “服务器中没有玩家，自动暂停服务器”,<br>“auto_pause”: true,</p>
+<p>“_only_admins_can_pause_the_game”: “只有管理员可以暂停游戏”,<br>“only_admins_can_pause_the_game”: true,</p>
+<p>“_comment_autosave_only_on_server”: “自动保存只保存在服务器上。”,<br>“autosave_only_on_server”: true,</p>
+<p>“_comment_admins”: “管理员列表，不区分大小写。”,<br>“admins”: []<br>}</p>
 
       
     </div>
